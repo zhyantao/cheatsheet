@@ -18,183 +18,183 @@
 
 \begin{multicols*}{3}
 
-\tikzstyle{mybox} = [draw=black, fill=white, very thick,
-          rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
-\tikzstyle{fancytitle} =[fill={rgb:red,220;green,220;blue,221},
-          text=white, font=\bfseries]
-%------------ START OF CONTENT -------------
+  \tikzstyle{mybox} = [draw=black, fill=white, very thick,
+  rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+  \tikzstyle{fancytitle} =[fill={rgb:red,220;green,220;blue,221},
+  text=white, font=\bfseries]
+  %------------ START OF CONTENT -------------
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-      Java 引用传递 \verb|ArrayList<Integer> b = a| 可以修改自定义类型的值。
-      Java 无地址传递，在递归遍历树的同时想修改变量，\textbf{声明为全局变量}可降低难度。
+        Java 引用传递 \verb|ArrayList<Integer> b = a| 可以修改自定义类型的值。
+        Java 无地址传递，在递归遍历树的同时想修改变量，\textbf{声明为全局变量}可降低难度。
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {指针和引用};
-\end{tikzpicture}
-
-
-
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
-
-      初始化：
-      \verb!int[] v = new int[];!\\
-      \verb!boolean[][] vv = new boolean[m][n];!\\
-      判空：
-      \verb!v == null || v.length == 0 // 一维!\\
-      \verb!vv == null || vv.length == null || ! \\
-      \verb!              vv[0].length == 0 // 二维!\\
-      截取：
-      \verb!subarr = Arrays.copyOfRange(arr,2,6);!
-
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {数组 int [ ]};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {指针和引用};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-      初始化：
-      \verb!String str = "hello world";!\\
-      \verb!StringBuilder sb = new StringBuilder(str);!\\
-      类型转换：\verb!sb.toString();!\\
-      增：
-      \verb!sb.append(true);  sb.insert(i, "abc");!\\
-      删：
-      \verb!sb.deleteCharAt(i);    sb.delete(i,j);!\\
-      改：
-      \verb!sb.setCharAt(i,'z');!\\
-      查：
-      \verb!char c = str.charAt(i);!\\
-      判等：
-      \verb!s1.equals(s2);!
-      判空：
-      \verb!s1.isEmpty();!\\
-      截取：
-      \verb!str.substring(i); str.substring(i,j);!\\
-      拼接：
-      \verb!str.concat("abc");!
+        初始化：
+        \verb!int[] v = new int[];!\\
+        \verb!boolean[][] vv = new boolean[m][n];!\\
+        判空：
+        \verb!v == null || v.length == 0 // 一维!\\
+        \verb!vv == null || vv.length == null || ! \\
+        \verb!              vv[0].length == 0 // 二维!\\
+        截取：
+        \verb!subarr = Arrays.copyOfRange(arr,2,6);!
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {字符串 String};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {数组 int [ ]};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-      \verb!ArrayList<Integer> v = new ArrayList<>();!\\
-      \verb!isEmpty(), size()!\\
-      \verb!add(), remove(), get(), set(1, 100)!
+        初始化：
+        \verb!String str = "hello world";!\\
+        \verb!StringBuilder sb = new StringBuilder(str);!\\
+        类型转换：\verb!sb.toString();!\\
+        增：
+        \verb!sb.append(true);  sb.insert(i, "abc");!\\
+        删：
+        \verb!sb.deleteCharAt(i);    sb.delete(i,j);!\\
+        改：
+        \verb!sb.setCharAt(i,'z');!\\
+        查：
+        \verb!char c = str.charAt(i);!\\
+        判等：
+        \verb!s1.equals(s2);!
+        判空：
+        \verb!s1.isEmpty();!\\
+        截取：
+        \verb!str.substring(i); str.substring(i,j);!\\
+        拼接：
+        \verb!str.concat("abc");!
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {动态数组};
-\end{tikzpicture}
-
-
-
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
-
-      \verb!LinkedList<Integer> v = new LinkedList<>();!\\
-      \verb!isEmpty(), size(), contains()!\\
-      \verb!add(), remove(), get() // 默认尾插，头删!\\
-      \verb!addFirst(), removeFirst(), removeLast()!
-
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {双向链表};
-\end{tikzpicture}
-
-\hfill
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {字符串 String};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-      \verb!Map<Integer, String> map = new HashMap<>();!\\
-      \verb!containsKey(), keySet(), getOrDefault()!\\
-      \verb!put(), remove(), get()!
+        \verb!ArrayList<Integer> v = new ArrayList<>();!\\
+        \verb!isEmpty(), size()!\\
+        \verb!add(), remove(), get(), set(1, 100)!
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {哈希表（哈希集合类似）};
-\end{tikzpicture}
-
-
-
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
-
-      \verb!Map<String> map = new TreeSet<>();!\\
-      \verb!put(), remove(), containsKey(), firstKey()!\\
-      \verb!lastKey(), floorKey(), ceilingKey()!
-
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {有序表（有序集合类似）};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {动态数组};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-      \verb!Deque<String> stack = new ArrayDeque<>();!\\
-      \verb!Deque<String> queue = new LinkedDeque<>();!\\
-      \verb!isEmpty(), size()!\\
-      \verb!addFirst(), removeFirst(), peekFirst()!\\
-      \verb!addLast(), removeLast(), peekLast()!
+        \verb!LinkedList<Integer> v = new LinkedList<>();!\\
+        \verb!isEmpty(), size(), contains()!\\
+        \verb!add(), remove(), get() // 默认尾插，头删!\\
+        \verb!addFirst(), removeFirst(), removeLast()!
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {双端队列（代替栈和队列）};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {双向链表};
+  \end{tikzpicture}
+
+  \hfill
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        \verb!Map<Integer, String> map = new HashMap<>();!\\
+        \verb!containsKey(), keySet(), getOrDefault()!\\
+        \verb!put(), remove(), get()!
+
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {哈希表（哈希集合类似）};
+  \end{tikzpicture}
+
+
+
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
+
+        \verb!Map<String> map = new TreeSet<>();!\\
+        \verb!put(), remove(), containsKey(), firstKey()!\\
+        \verb!lastKey(), floorKey(), ceilingKey()!
+
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {有序表（有序集合类似）};
+  \end{tikzpicture}
+
+
+
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
+
+        \verb!Deque<String> stack = new ArrayDeque<>();!\\
+        \verb!Deque<String> queue = new LinkedDeque<>();!\\
+        \verb!isEmpty(), size()!\\
+        \verb!addFirst(), removeFirst(), peekFirst()!\\
+        \verb!addLast(), removeLast(), peekLast()!
+
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {双端队列（代替栈和队列）};
+  \end{tikzpicture}
+
+
+
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
+
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 Integer.parseInt(s) // String -> int
 String.valueOf(chs) // int, char[] -> String
 '8' - '0'           // char -> int
@@ -203,41 +203,41 @@ foo.intValue()      // double -> int
 list = Arrays.asList(arr) // [] -> ArrayList 
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {类型转换};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {类型转换};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 TreeNode p = new TreeNode(-1, head);
 TreeNode dummy = p; // 保存头结点位置，不移动
 return dummy.next;
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {哨兵：哑元结点（提高效率）};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {哨兵：哑元结点（提高效率）};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 Arrays.sort(nums);       // 数组排序
 Arrays.binarySearch(nums, 23);
 Arrays.stream(nums).max().getAsInt();
@@ -246,97 +246,97 @@ list.sort(Collections.reverseOrder());// 逆序
 Collections.reverse(list); // 翻转链表
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {Arrays 和 Collections 工具包};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {Arrays 和 Collections 工具包};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-      默认 int 无符号最大值约为 $40 \times 10^8$（32 位）。\\
-      \verb!BigInteger A = BigInteger.valueOf(23);!\\
-      \verb!BigDecimal B = BigDecimal.valueOf(1234.56);!\\
-      \verb!A.add(A), A.subtract(A), !\\
-      \verb!A.multiply(A), A.divide(A)!
+        默认 int 无符号最大值约为 $40 \times 10^8$（32 位）。\\
+        \verb!BigInteger A = BigInteger.valueOf(23);!\\
+        \verb!BigDecimal B = BigDecimal.valueOf(1234.56);!\\
+        \verb!A.add(A), A.subtract(A), !\\
+        \verb!A.multiply(A), A.divide(A)!
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {大数计算：java.math.*};
-\end{tikzpicture}
-
-
-
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
-
-      基于数组实现：\verb!key! 为数组下标，\verb!value! 为元素值。\\
-      \verb!int[] map = new int[256]; // ASCII -> 下标!
-
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {简易哈希表的实现};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {大数计算：java.math.*};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        基于数组实现：\verb!key! 为数组下标，\verb!value! 为元素值。\\
+        \verb!int[] map = new int[256]; // ASCII -> 下标!
+
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {简易哈希表的实现};
+  \end{tikzpicture}
+
+
+
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
+
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 ArrayList<String> list = new ArrayList<>();
 Set<String> set = new HashSet<>();
 set.addAll(list);
 ArrayList<String> ret = new ArrayList<>(set);
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {ArrayList 元素去重};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {ArrayList 元素去重};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 while (n > 0) {
   digit = n % 10;   // 取出各位
   n = n / 10;       // 更新数字
 } // 注意处理最值 Integer.MAX_VALUE
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {取出整数中的每一位};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {取出整数中的每一位};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 Map<String, String> map = new HashMap<>();
 for (Map.Entry<String, String> entry : 
                           map.entrySet()) {
@@ -345,21 +345,21 @@ for (Map.Entry<String, String> entry :
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {遍历哈希表或哈希集合};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {遍历哈希表或哈希集合};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 void traverse(ListNode head) {
   // 前序遍历代码
   traverse(head.next);
@@ -367,21 +367,21 @@ void traverse(ListNode head) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {链表的遍历};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {链表的遍历};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 void traverse(TreeNode root) {
   if (root == null) return;
   // 前序遍历代码
@@ -392,21 +392,21 @@ void traverse(TreeNode root) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {二叉树的遍历};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {二叉树的遍历};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 class TreeNode {
   int val;
   TreeNode[] children;
@@ -417,20 +417,20 @@ void traverse(TreeNode root) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {图（N 叉树）的遍历};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {图（N 叉树）的遍历};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 // 利用这个例子学习如何使用递归的返回值
 int traverse(TreeNode root) {
   // 叶节点相当于 dp 的最后一个状态
@@ -444,21 +444,21 @@ int traverse(TreeNode root) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {求二叉树的深度：递归实现};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {求二叉树的深度：递归实现};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 Queue<Integer> queue = new LinkedList<>();
 void traverse(TreeNode root) {
   if (root != null)
@@ -478,20 +478,20 @@ void traverse(TreeNode root) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {二叉树的层序遍历};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {二叉树的层序遍历};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 // 类名必须为 Main，不含 package xxx 信息
 public class Main {
   public static void main(String[] args) {
@@ -509,20 +509,20 @@ public class Main {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {ACM 模式：import java.util.Scanner};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {ACM 模式：import java.util.Scanner};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 // 以补码形式存储，以原码形式输出到屏幕
 // int 类型按道理应该写 32 位，下面写法不严谨
 9     // 原码 01001 补码 01001 反码 01001
@@ -549,46 +549,46 @@ int add(int a,int b) {
 }
 \end{verbatim}
 
-      若出现新的运算规则，题目实际想让自己定义运算。
+        若出现新的运算规则，题目实际想让自己定义运算。
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {位运算};
-\end{tikzpicture}
-
-
-
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
-
-      $T(N) = a * T(\displaystyle\frac{N}{b}) + O(N^d)$
-
-      $N$ 是问题的总规模，
-      $a$ 是递归调用的次数，
-      $\frac{N}{b}$ 是子问题的规模，
-      $O(N^d)$ 是除递归代码外的时间复杂度。
-
-      - $log_b a < d \Rightarrow O(N^d)$ \\
-      - $log_b a > d \Rightarrow O(Nlog_b a)$ \\
-      - $log_b a = d \Rightarrow O(N^d logN)$
-
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {计算递归的时间复杂度：master 公式};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {位运算};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        $T(N) = a * T(\displaystyle\frac{N}{b}) + O(N^d)$
+
+        $N$ 是问题的总规模，
+        $a$ 是递归调用的次数，
+        $\frac{N}{b}$ 是子问题的规模，
+        $O(N^d)$ 是除递归代码外的时间复杂度。
+
+        - $log_b a < d \Rightarrow O(N^d)$ \\
+        - $log_b a > d \Rightarrow O(Nlog_b a)$ \\
+        - $log_b a = d \Rightarrow O(N^d logN)$
+
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {计算递归的时间复杂度：master 公式};
+  \end{tikzpicture}
+
+
+
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
+
+        \begin{verbatim}
 // 注意这里有多处使用 return
 int binarySearch(int[] arr, int target,
                  int left, int right) {
@@ -607,20 +607,20 @@ int binarySearch(int[] arr, int target,
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {二分查找：递归实现};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {二分查找：递归实现};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 void shellSort(int[] arr) {
   for (int step = arr.length / 2;
            step >= 1; step /= 2) {
@@ -637,21 +637,21 @@ void shellSort(int[] arr) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {希尔排序：从小到大};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {希尔排序：从小到大};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 // 向已有堆的末尾插入元素，重建大根堆
 void heapInsert(int[] arr, int i) {
   while (arr[i] > arr[(i - 1) / 2]) {
@@ -677,20 +677,20 @@ heapify(int[] arr, int i, int heapSize) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {重建大根堆：树形数组、完全二叉树、优先队列};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {重建大根堆：树形数组、完全二叉树、优先队列};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 void insertSort(int[] arr) {
   int j; // 用于扫描 i 之前的元素
   for (int i = 1; i < arr.length; i++) {
@@ -702,23 +702,23 @@ void insertSort(int[] arr) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {插入排序 $O(n^2)$：从小到大};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {插入排序 $O(n^2)$：从小到大};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-      PriorityQueue 就是一个小根堆结构，可以直接使用。
+        PriorityQueue 就是一个小根堆结构，可以直接使用。
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 heapSort(int[] arr) {
   if (arr == null || arr.length < 2)
     return;
@@ -738,20 +738,20 @@ heapSort(int[] arr) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {堆排序：从小到大（利用 heapInsert 和 heapify）};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {堆排序：从小到大（利用 heapInsert 和 heapify）};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 mergeSort(int[] arr, int[] tmp,
           int left, int right) {
   if (left < right) {
@@ -787,21 +787,21 @@ int[] tmp = new int[arr.length]; // 辅助空间
 mergeSort(arr, tmp, 0, arr.length - 1);
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {归并排序 $O(nlog(n))$：分而治之（递归）};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {归并排序 $O(nlog(n))$：分而治之（递归）};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 quickSort(int[] arr, int left, int right) {
   if (left < right) {
     int pivot = arr[left];   // 随机选基准点
@@ -829,20 +829,20 @@ quickSort(int[] arr, int left, int right) {
 调用：quickSort(arr, 0, arr.length - 1);
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {快速排序 $O(nlog(n))$：从小到大};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {快速排序 $O(nlog(n))$：从小到大};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 // 单调队列，要始终维持队列递增或递减的状态。
 // 递增（减）队列的队头是最小（大）值。
 int[] maxSlidingWindow(int[] arr, int sz) {
@@ -865,26 +865,26 @@ int[] maxSlidingWindow(int[] arr, int sz) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {求滑动窗口中的最大值：单调队列、双端队列};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {求滑动窗口中的最大值：单调队列、双端队列};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-      核心思想：适用小问题的算法也适用于大问题\\
-      1. 找出基线条件（递归终止条件）\\
-      2. 不断将问题分解，直到符合基线条件\\
-      涉及数组时基线条件通常是数组为空或只含一个元素
+        核心思想：适用小问题的算法也适用于大问题\\
+        1. 找出基线条件（递归终止条件）\\
+        2. 不断将问题分解，直到符合基线条件\\
+        涉及数组时基线条件通常是数组为空或只含一个元素
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 // 求和：1 + ... + 50，// traverse(dp, 0)
 int traverse(int[] dp, int i) {
   // 如果依赖未来的知识，需要知道最后状态的值
@@ -893,31 +893,31 @@ int traverse(int[] dp, int i) {
   return i + traverse(dp, i + 1);
 }
 \end{verbatim}
-  
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {递归的基本思路};
-\end{tikzpicture}
+
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {递归的基本思路};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-      先暴力递归，再使用优化技巧（消除重复计算）。\\
-      1. 直接写出初始状态 \verb!dp[0]!, \verb!dp[1]! 的答案；\\
-      2. 当前状态 \verb!dp[i]! 的通常是题目要求的结果；\\
-      3. \verb!dp[i]! 与 \verb!dp[i-2:i+2]! 有何关联？\\
-      4. \verb!dp[i,j]! 与 \verb!dp[i-2:i+2,j-2:j+2]! 有何关联？ \\
-      注：\verb!dp[i]! 是状态数组，表示第 \verb!i! 个状态，
-      也就是数组中的第 \verb!i! 个元素。
-      通常，整个数组作为\textbf{额外的不变参数}一直传递，用于判断是否访问越界。
+        先暴力递归，再使用优化技巧（消除重复计算）。\\
+        1. 直接写出初始状态 \verb!dp[0]!, \verb!dp[1]! 的答案；\\
+        2. 当前状态 \verb!dp[i]! 的通常是题目要求的结果；\\
+        3. \verb!dp[i]! 与 \verb!dp[i-2:i+2]! 有何关联？\\
+        4. \verb!dp[i,j]! 与 \verb!dp[i-2:i+2,j-2:j+2]! 有何关联？ \\
+        注：\verb!dp[i]! 是状态数组，表示第 \verb!i! 个状态，
+        也就是数组中的第 \verb!i! 个元素。
+        通常，整个数组作为\textbf{额外的不变参数}一直传递，用于判断是否访问越界。
 
-% 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
-\begin{verbatim}
+        % 代码段要顶格写，否则，会看起来跑到 minipage 外面去了
+        \begin{verbatim}
 // 1. 暴力递归求斐波那契数列：0 1 1 2 3 ...
 int fib(int n) { // 求最后状态 dp[n] 的值
   if (n <= 1)
@@ -937,20 +937,20 @@ int fib(int n) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {动态规划：带记忆功能的（非）递归};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {动态规划：带记忆功能的（非）递归};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 // 比如：模拟从黑箱子中取球的过程（有放回）
 // 回溯不同于动态规划，动态规划有公式可循
 // 用 arr 表示原始数组，用 used 剪枝优化
@@ -976,20 +976,20 @@ void dfs(int[] arr, boolean[] used, int i) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {全排列问题：回溯、N 叉树遍历、穷举};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {全排列问题：回溯、N 叉树遍历、穷举};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 // "感染" 每个可连通的单元，由 1 变成 2
 void infect(int[][] arr, int i, int j,
                          int N, int M) {
@@ -1017,20 +1017,20 @@ int count(int[][] arr) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {岛问题：求连通区域的个数};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {岛问题：求连通区域的个数};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 // next 数组记录最长相等的前后缀长度
 void getNext(int[] next, String pat) {
   next[0] = 0;
@@ -1066,20 +1066,20 @@ int strStr(String txt, String pat) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {KMP 算法：求 next 数组};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {KMP 算法：求 next 数组};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 // 需要借助栈和指针来实现
 void inorder(TreeNode root) {
   Stack<TreeNode> stack = new Stack<>();
@@ -1099,20 +1099,20 @@ void inorder(TreeNode root) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {中序遍历：迭代实现};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {中序遍历：迭代实现};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 void preorder(TreeNode root) {
   Stack<TreeNode> stack = new Stack<>();
   if (root == null)
@@ -1130,20 +1130,20 @@ void preorder(TreeNode root) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {前序遍历：迭代实现};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {前序遍历：迭代实现};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 // 默认的初始化方法
 PriorityQueue<Integer> pq = new PriorityQueue<>();
 
@@ -1158,20 +1158,20 @@ PriorityQueue<Integer> pq = new PriorityQueue<>(
 );
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {优先级队列：默认是小根堆};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {优先级队列：默认是小根堆};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 // 和前序遍历类似的代码，也需要借助栈来实现
 // 遍历顺序不一样，且多了一个 reverse 环节
 void postorder(TreeNode root) {
@@ -1193,20 +1193,20 @@ void postorder(TreeNode root) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {后序遍历：迭代实现};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {后序遍历：迭代实现};
+  \end{tikzpicture}
 
 
 
-%------------- START SECTION ---------------
-\begin{tikzpicture}
-  \node [mybox] (box){%
-    \begin{minipage}{0.3\textwidth}
+  %------------- START SECTION ---------------
+  \begin{tikzpicture}
+    \node [mybox] (box){%
+      \begin{minipage}{0.3\textwidth}
 
-\begin{verbatim}
+        \begin{verbatim}
 reverseList(ListNode head) {
   if (head == null || head.next == null)
       return head;
@@ -1225,15 +1225,15 @@ reverseList(ListNode head) {
 }
 \end{verbatim}
 
-    \end{minipage}
-  };
-  %-----------------------------------------
-  \node[fancytitle, right=10pt] at (box.north west) {后序遍历：迭代实现};
-\end{tikzpicture}
+      \end{minipage}
+    };
+    %-----------------------------------------
+    \node[fancytitle, right=10pt] at (box.north west) {后序遍历：迭代实现};
+  \end{tikzpicture}
 
 
 
-%------------ END OF CONTENT ---------------
+  %------------ END OF CONTENT ---------------
 \end{multicols*}
 
 \end{document}
